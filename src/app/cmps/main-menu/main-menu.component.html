@@ -1,0 +1,21 @@
+<section class="main-menu">
+    <button (click)="isShowMenu = ! isShowMenu" class="flex align-center clean-btn mobile-btn">
+        <img src="../../../assets/icons/main-menu/mobile-btn.png" title="menu">
+    </button>
+    <div class="flex column space-between main-menu-container" [class]="isShowMenu? 'show':''">
+        <div class="flex align-center justify-center arrow-container">
+            <img src="../../../assets/icons/main-menu/drop up.png">
+        </div>
+        <ul class="flex column space-between clean-list states-list">
+            <li class="flex align-center justify-center active">
+                <img src="../../../assets/icons/main-menu/Dashboard.png">
+            </li>
+            <li *ngFor="let icon of icons" class="flex align-center justify-center">
+                <img [src]="'../../../assets/icons/main-menu/'+ icon +'.png'">
+            </li>
+        </ul>
+        <div class="flex align-center justify-center arrow-container">
+            <img src="../../../assets/icons/main-menu/drop down.png">
+        </div>
+    </div>
+</section>

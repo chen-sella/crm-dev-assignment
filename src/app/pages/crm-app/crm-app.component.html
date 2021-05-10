@@ -1,0 +1,22 @@
+<section *ngIf="cnadidates" class="flex column crm-app">
+    <crm-header [jobsNum]="jobs.length" [resultsNum]="cnadidates.length" [filter]="filter"></crm-header>
+    <div class="flex grow column main-layout results-container">
+        <div class="flex space-between controls-container">
+            <sort-by></sort-by>
+            <div class="flex align-center">
+                <button class="flex align-center view-card-btn"></button>
+                <button class="flex align-center view-list-btn"></button>
+            </div>
+        </div>
+        <candidate-list [candidates]="cnadidatesToRender()" [filter]="filter" (job)="addToJob($event)"></candidate-list>
+        <button *ngIf="!isSeeMore && cnadidates.length > 3; else seeLess" class="flex align-center see-more-btn"
+            (click)="isSeeMore = true">
+            <p>See More</p>
+            <img src="../../../assets/icons/candidate-list/see-more.png">
+        </button>
+        <button *ngIf="isSeeMore" class="flex align-center see-more-btn" (click)="isSeeMore = false">
+            <p>See Less</p>
+            <img src="../../../assets/icons/candidate-list/see-less.png" width="18">
+        </button>
+    </div>
+</section>

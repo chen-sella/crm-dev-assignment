@@ -1,0 +1,36 @@
+<section class="flex align-center space-between main-header">
+    <div class="flex align-center logo-container">
+        <div class="flex align-center justify-center img-container">
+            <img class="logo" src="../../../assets/icons/header/p.png">
+        </div>
+        <p>Phenom</p>
+    </div>
+    <search-bar></search-bar>
+    <button class="clean-btn menu-mobile-btn" (click)="isShowMenu = !isShowMenu"><img
+            src="../../../assets/icons/header/menu.png"></button>
+    <div class="flex align-center actions-container" [class]="isShowMenu? 'show' : ''">
+        <ul class="clean-list flex align-center nav-list">
+            <li class="flex align-center">
+                <img src="../../../assets/icons/header/add.png" title="Add">
+                <p class="mobile-txt">Add</p>
+            </li>
+            <li class="flex align-center">
+                <img src="../../../assets/icons/header/notification.png" title="Notifications">
+                <p class="mobile-txt">Notifications</p>
+            </li>
+            <li class="flex align-center">
+                <img src="../../../assets/icons/header/settings.png" title="Settings">
+                <p class="mobile-txt">Settings</p>
+            </li>
+            <li class="flex align-center">
+                <img src="../../../assets/icons/header/apps.png" title="Applications">
+                <p class="mobile-txt">Applications</p>
+            </li>
+        </ul>
+        <div class="flex align-center full-name">
+            <p>Shira Levi</p>
+            <img src="../../../assets/icons/header/arrow-down.png">
+        </div>
+    </div>
+
+</section>

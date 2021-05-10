@@ -1,0 +1,92 @@
+@import "../../../assets/styles/setup/variables";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/mixins";
+
+.crm-header {
+  padding: 80px 0px 0px 90px;
+  background-color: $clr6;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+
+  .menu-btn {
+    display: none;
+  }
+  .result-container {
+    padding-bottom: 36px;
+
+    .content {
+      margin-left: 16px;
+    }
+  }
+
+  .tabs-bar {
+    li {
+      padding: 8px 16px 8px 16px;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+
+      &.active {
+        color: $clr3;
+        border-bottom: 2px solid $clr3;
+      }
+    }
+    .more {
+      img {
+        height: 18px;
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+@include for-normal-layout {
+  .crm-header {
+    padding-bottom: 10px;
+
+    .menu-btn {
+      display: flex;
+    }
+
+    .result-container {
+      padding-bottom: 20px;
+    }
+
+    .tabs-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $clr6;
+      position: absolute;
+      top: 190px;
+      left: 100px;
+      z-index: 2;
+      display: none;
+      transition: 0.45s;
+      box-shadow: 0px 0px 8px rgb(0 0 0 / 15%);
+      border-radius: 2px;
+
+      &.show {
+        display: flex;
+      }
+
+      li {
+        width: 100%;
+        &:hover {
+          background-color: $clr9;
+          color: $clr10;
+        }
+        &.active {
+          border-bottom: 2px solid transparent;
+        }
+      }
+    }
+  }
+}
+
+@include for-mobile-layout {
+  .crm-header {
+    padding-left: 20px;
+
+    .tabs-bar {
+      left: 20px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<section class="crm-header">
+    <div class="flex align-center result-container">
+        <img src="../../../assets/icons/crm-header/search.png">
+        <div class="flex column content">
+            <h3>{{resultsNum}} results found</h3>
+            <h1>{{filter.term || "All"}}</h1>
+        </div>
+    </div>
+    <button (click)="isShowMenu = !isShowMenu" class="flex align-center clean-btn menu-btn"><img
+            src="../../../assets/icons/crm-header/menu.png"></button>
+    <ul class="flex align-center clean-list tabs-bar" [class]="isShowMenu? 'show':''">
+        <li class="active">Candidates ({{resultsNum}})</li>
+        <li>Jobs ({{jobsNum}})</li>
+        <li>Employees (6)</li>
+        <li>Campaigns (2)</li>
+        <li class="flex align-center more">
+            <p>More (6)</p>
+            <img src="../../../assets/icons/crm-header/sort-arrow-down.png">
+        </li>
+    </ul>
+
+</section>

@@ -1,0 +1,117 @@
+@import "../../../assets/styles/setup/variables";
+@import "../../../assets/styles/setup/mixins";
+
+.main-header {
+  background-color: $clr3;
+  color: $clr6;
+  height: 56px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 4;
+
+  .menu-mobile-btn {
+    display: none;
+  }
+
+  .logo-container {
+    .img-container {
+      width: 56px;
+      height: 40px;
+      border-right: 1px solid $clr6;
+    }
+    p {
+      margin-left: 17px;
+    }
+  }
+  .actions-container {
+    .nav-list {
+      margin-right: 27px;
+      & > :not(:last-child) {
+        margin-right: 31px;
+      }
+      li {
+        cursor: pointer;
+        .mobile-txt {
+          display: none;
+        }
+      }
+    }
+    .full-name {
+      margin-right: 21px;
+      p {
+        margin-right: 13px;
+      }
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@include for-wide-layout {
+  .main-header {
+    .menu-mobile-btn {
+      display: flex;
+      margin-right: 10px;
+    }
+
+    .actions-container {
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $clr4;
+      position: fixed;
+      margin-top: 56px;
+      z-index: 100;
+      transform: translateX(100%);
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100vh;
+      transition: 0.45s;
+
+      &.show {
+        transform: translateX(0);
+      }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-inline-end: 0px;
+        & > :not(:last-child) {
+          margin-inline-end: 0px;
+        }
+        li {
+          padding: 14px 16px;
+          border-bottom: 1px solid #d7dae4;
+          width: 100%;
+          &:hover {
+            background-color: $clr7;
+          }
+          .mobile-txt {
+            display: inline;
+            margin-left: 10px;
+          }
+        }
+      }
+      .full-name {
+        padding: 14px 16px;
+      }
+    }
+  }
+}
+
+@include for-mobile-layout {
+  .main-header {
+    .actions-container {
+      width: 200px;
+    }
+    .logo-container {
+      p {
+        display: none;
+      }
+    }
+  }
+}

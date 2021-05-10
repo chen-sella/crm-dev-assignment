@@ -1,0 +1,4 @@
+<ul class=" clean-list candidate-list">
+    <candidate-preview (job)="addToJob($event)" *ngFor="let candidate of candidates" [candidate]="candidate"
+        [filter]="filter"></candidate-preview>
+</ul>

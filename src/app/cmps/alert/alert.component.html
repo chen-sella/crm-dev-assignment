@@ -1,0 +1,4 @@
+<section @enterLeaveTrigger *ngIf="alert" class="flex align-center alert">
+    <span [innerHTML]="alert.message"></span>
+    <button class="flex align-center close" (click)="removeAlert()"><img src="../../../assets/icons/close.png"></button>
+</section>

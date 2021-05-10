@@ -1,0 +1,14 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/variables";
+
+.candidate-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+@include for-mobile-layout {
+  .candidate-list {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}

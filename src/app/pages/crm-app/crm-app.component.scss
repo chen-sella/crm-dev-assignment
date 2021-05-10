@@ -1,0 +1,46 @@
+@import "../../../assets/styles/setup/variables";
+
+.crm-app {
+  height: 100vh;
+
+  .results-container {
+    .see-more-btn {
+      padding: 18px;
+      align-self: center;
+      color: $clr3;
+      line-height: 24px;
+      border: none;
+      background-color: transparent;
+      margin-top: 40px;
+
+      img {
+        margin-left: 8px;
+      }
+    }
+
+    .controls-container {
+      margin-bottom: 24px;
+
+      button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+      }
+
+      .view-card-btn {
+        &::before {
+          content: url("../../../assets/icons/candidate-list/view-card.png");
+        }
+      }
+
+      .view-list-btn {
+        &::before {
+          content: url("../../../assets/icons/candidate-list/view-list.png");
+        }
+        &:hover::before {
+          content: url("../../../assets/icons/candidate-list/view-list-hover.png");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<li class="flex column candidate-preview">
+    <div class="flex preview-header">
+        <div class="avatar-container">
+            <ngx-avatar bgColor="#F0F0F0" fgColor="#9383FE" textSizeRatio="14px" size="32" [src]="candidate.pictureUrl"
+                [name]="fullName">
+            </ngx-avatar>
+            <img *ngIf="candidate.isFavourite" src="../../../assets/icons/candidate-preview/star.png" width="12px">
+        </div>
+        <div class="header-content">
+            <div class="flex align-center">
+                <h2>{{fullName | titlecase}}</h2>
+                <a class="flex align-center" *ngIf="candidate.linkedInProfileURL" [href]="candidate.linkedInProfileURL"><img
+                        src="../../../assets/icons/candidate-preview/linkedin.png"></a>
+            </div>
+            <div class="flex align-center location-container">
+                <img src="../../../assets/icons/candidate-preview/location.png">
+                <p>{{candidate.location}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex grow column space-between preview-content">
+        <div>
+            <div class="job">
+                <div class="flex align-start title">
+                    <img src="../../../assets/icons/candidate-preview/work.png">
+                    <p [innerHTML]="highlightJob()"></p>
+                </div>
+                <div class="info">
+                    <p>{{candidate.currentCompany.company}}</p>
+                    <p>{{this.date}}</p>
+                </div>
+            </div>
+            <div class="education">
+                <div class="flex align-start title">
+                    <img src="../../../assets/icons/candidate-preview/education.png">
+                    <p>{{candidate.highestEducation.universityName}}</p>
+                </div>
+                <div class="info">
+                    <p>{{candidate.highestEducation.fieldOfStudy}}</p>
+                </div>
+            </div>
+        </div>
+        <button (click)="addToJob(candidate)">Add to Job</button>
+    </div>
+</li>

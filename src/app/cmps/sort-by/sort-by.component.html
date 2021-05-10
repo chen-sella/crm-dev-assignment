@@ -1,0 +1,12 @@
+<section class="sort-by">
+    <div (click)="isSortOptShow = !isSortOptShow" class="flex align-center label-container">
+        <h3>Sort by <span>{{sortBy}}</span></h3>
+        <img src="../../../assets/icons/candidate-list/sort-arrow-down.png">
+    </div>
+    <ul [@toggleAnimation]="isSortOptShow ? 'open' : 'closed'" class="clean-list sort-options">
+        <li (click)="sort('Relevance')">Relevance</li>
+        <li (click)="sort('Name')">Name</li>
+        <li (click)="sort('Seniority')">Seniority</li>
+    </ul>
+</section>
+

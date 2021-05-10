@@ -1,0 +1,53 @@
+@import "../../../assets/styles/setup/variables";
+@import "../../../assets/styles/setup/mixins";
+
+.main-menu {
+  .mobile-btn {
+    display: none;
+  }
+  .main-menu-container {
+    width: 56px;
+    background-color: $clr4;
+    position: fixed;
+    bottom: 0;
+    top: 56px;
+
+    .arrow-container {
+      background-color: $clr5;
+      cursor: pointer;
+    }
+    .states-list {
+      height: 100%;
+
+      li {
+        min-height: 56px;
+        cursor: pointer;
+      }
+      .active {
+        background-color: $clr7;
+      }
+    }
+  }
+}
+
+@include for-mobile-layout {
+  .main-menu {
+    .main-menu-container {
+      transform: translate(-100%);
+      z-index: 3;
+      transition: 0.45s;
+
+      &.show {
+        transform: translate(0);
+        box-shadow: 0px 0px 8px rgb(0 0 0 / 65%);
+      }
+    }
+
+    .mobile-btn {
+      display: flex;
+      position: absolute;
+      top: 148px;
+      left: 60px;
+    }
+  }
+}

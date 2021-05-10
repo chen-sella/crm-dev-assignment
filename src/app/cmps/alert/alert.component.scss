@@ -1,0 +1,30 @@
+@import "../../../assets/styles/setup/variables";
+@import "../../../assets/styles/setup/mixins";
+
+.alert {
+  position: fixed;
+  top: 70px;
+  left: 70px;
+  padding: 20px 15px;
+  border-radius: 2px;
+  border: 1px solid #e4ddfc;
+  background-color: #e8e2fc;
+
+  .close {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+    img {
+      width: 18px;
+    }
+  }
+}
+
+@include for-mobile-layout {
+  .alert {
+    width: 270px;
+    top: 60px;
+    left: 20px;
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../../assets/styles/setup/variables";
+@import "../../../assets/styles/setup/mixins";
+
+.search-bar {
+  width: 40%;
+  height: 40px;
+  border: 1px solid $clr6;
+  border-radius: 2px;
+  position: absolute;
+  left: calc(50% - 40% / 2);
+  top: calc(50% - 40px / 2);
+
+  input {
+    background-color: transparent;
+    border: none;
+    flex-grow: 1;
+    color: $clr6;
+    letter-spacing: 0.25px;
+    &::placeholder {
+      color: $clr6;
+    }
+  }
+  img {
+    margin: 11px 8px 11px 16px;
+  }
+}
+
+@include for-mobile-layout {
+  .search-bar {
+    position: unset;
+    width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+.main-layout {
+  padding: 24px 80px 24px 136px;
+}
+
+@include for-mobile-layout {
+  .main-layout {
+    padding: 24px 20px 24px 20px;
+  }
+}
